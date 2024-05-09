@@ -1,0 +1,48 @@
+.main-grid {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.main-grid .about-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.main-grid .about-content h2 {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgb(58, 58, 62);
+}
+.main-grid .about-content p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(58, 58, 62);
+  margin: 0;
+}
+.main-grid .about-link-btn {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 15px;
+  color: rgb(58, 58, 62);
+  border-radius: 5px;
+  max-width: 12rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid rgb(58, 58, 62);
+}
+.main-grid .img-grid-box {
+  width: 100%;
+  max-width: 60%;
+  position: relative;
+}
+.main-grid .img-grid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}

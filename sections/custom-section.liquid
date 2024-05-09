@@ -1,0 +1,71 @@
+{{ 'custom-section-style.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width main-grid">
+  <div class="about-box {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="about-content ">
+      {% if section.settings.about_header != blank %}
+        <h2 class="">{{ section.settings.about_header }}</h2>
+      {% endif %}
+      {% if section.settings.about_para != blank %}
+        <p>{{ section.settings.about_para }}</p>
+      {% endif %}
+    </div>
+    <a href="{{ section.settings.about_link }}" class="about-link-btn"> Learn More </a>
+  </div>
+  <div class="img-grid-box">
+    <div
+      class="img-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    ></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom section",
+  "tag": "section",
+  "class": "custom-section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "about_header",
+      "label": "about header"
+    },
+    {
+      "type": "text",
+      "id": "about_para",
+      "label": "about para"
+    },
+    {
+      "type": "url",
+      "id": "about_link",
+      "label": "about link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "limit": 3,
+      "name": "video block",
+      "settings": [
+        {
+          "type": "video",
+          "id": "featured_video",
+          "label": "featured video"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "limit": 1,
+      "name": "image block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "featured_img",
+          "label": "featued image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
