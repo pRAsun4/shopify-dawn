@@ -13,9 +13,20 @@
     <a href="{{ section.settings.about_link }}" class="about-link-btn"> Learn More </a>
   </div>
   <div class="img-grid-box">
-    <div
-      class="img-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    ></div>
+    <div class="img-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="img-card item-1">
+        <img src="{{ 'about_img.jpg' |  asset_url  }}" width="300" height="400" alt="">
+      </div>
+      <div class="img-card item-2">
+        <img src="{{ 'about_img.jpg' |  asset_url  }}" width="300" height="400" alt="">
+      </div>
+      <div class="img-card item-3">
+        <img src="{{ 'about_img.jpg' |  asset_url  }}" width="300" height="400" alt="">
+      </div>
+      <div class="img-card item-4">
+        <img src="{{ 'about_img.jpg' |  asset_url  }}" width="300" height="400" alt="">
+      </div>
+    </div>
   </div>
 </div>
 
