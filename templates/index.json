@@ -73,7 +73,34 @@
         "about_header": "Note from the founder",
         "about_para": "Since 2016, AGASHE has served as a platform to feature both established labels and emerging designers, with a commitment to delivering top-quality designs and exceptional customer service. With three thriving stores today, we aspire to expand our reach beyond boundaries and maintain our youthful and vibrant appeal across all age groups in the years to come.",
         "about_link": "#"
-      }
+      },
+      "blocks": {
+        "video-1": {
+          "type": "video",
+          "settings": {
+            "featured_video": "shopify:\/\/files\/videos\/video-3.mp4"
+          }
+        },
+        "video-2":{
+          "type": "video",
+          "settings": {
+            "featured_video": "shopify:\/\/files\/videos\/video-3.mp4"
+          }
+        },
+        "video-3": {
+          "type": "video",
+          "settings": {
+            "featured_video":"shopify:\/\/files\/videos\/video-3.mp4"
+          }
+        },
+        "about-image":{
+          "type": "image",
+          "settings": {
+            "featured_img": "shopify:\/\/shop_images\/about_image.webp"
+          }
+        }
+      },
+      "block_order": ["video-1", "video-2", "video-3", "about-image"]
     },
     "featured_collection": {
       "type": "featured-collection",
