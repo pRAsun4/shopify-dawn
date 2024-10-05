@@ -1,0 +1,103 @@
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+<style>
+  .slider-main{
+      width: 100%;
+      margin-top:{{ section.settings.section_margin_top }}px;
+      margin-bottom:{{ section.settings.section_margin_bottom }}px;
+  }
+  .slider-main .slider-card{
+    padding: 0 120px;
+  }
+  .slider-main .custom-swiper-slider{
+    position: relative;
+  }
+  .slider-main .slider-prev-next{
+    top: 35%;
+  }
+</style>
+
+<section class="slider-main slider-main-{{ section.id }} ">
+  <div class="page-width">
+    <h2 class="">Slider </h2>
+    <div class="swiper custom-swiper-slider">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'slide' %}
+              <div class="swiper-slide">
+                <div class="slider-card">
+                  {{ block.settings.text_content }}
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="swiper-button-next slider-prev-next"></div>
+    <div class="swiper-button-prev slider-prev-next"></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Slider section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "section_margin_top",
+      "default": 0,
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "label": "Margin Top",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_margin_bottom",
+      "default": 0,
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "label": "Margin Bottom",
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slider blocks",
+      "limit": 5,
+      "type": "slide",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_content",
+          "label": "slider Text",
+          "default": "<h3>Faucibus pulvinar elementum integer enim neque volutpat. Vel pretium lectus quam id leo in vitae turpis massa</h3>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<script src="{{ 'swiper-bundle.min.js' |  asset_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.custom-swiper-slider', {
+      speed: 1000,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.custom-swiper-slider .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.custom-swiper-slider .swiper-button-next',
+        prevEl: '.custom-swiper-slider .swiper-button-prev',
+      },
+    });
+  });
+</script>

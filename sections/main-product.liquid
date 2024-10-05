@@ -101,6 +101,10 @@
                     </h2>
                   </a>
                 </div>
+              {%  when 'custom-title' %}
+                <div class="product-custom-title">
+                  <h2 class="">{{ product.metafields.custom.custom_title.value }}</h2>
+                </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -204,7 +208,7 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                {% comment %} <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
                     <summary>
                       <div class="summary__title">
@@ -220,7 +224,7 @@
                       {{ block.settings.page.content }}
                     </div>
                   </details>
-                </div>
+                </div> {% endcomment %}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -461,6 +465,11 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+              {% when 'custom-description' %}
+                <div class="custom-description">
+                  <h2 class="">Custom Description</h2>
+                  <h4 class="">{{ product.metafields.custom.custom_description.value }}</h4>
+                </div>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -790,6 +799,23 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "custom-title",
+      "name": "custom title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title"
+        }
+      ]
+    },
+    {
+      "type": "custom-description",
+      "name": "custom description",
       "limit": 1
     },
     {

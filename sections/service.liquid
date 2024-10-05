@@ -1,0 +1,88 @@
+{{ 'service-style.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .service-section{
+    margin-top:{{ section.settings.section_margin_top }}px;
+    margin-bottom:{{ section.settings.section_margin_bottom }}px;
+  }
+</style>
+<section class="service-section service-{{ section.id }} ">
+  <div class="page-width service-grid">
+    <h3 class="">Service</h3>
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when 'cards' %}
+                <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        {% if block.settings.card_image != blank %}
+                            <img src={{ block.settings.card_image | image_url: width: 300 }} alt="service image" width="300" height="300" >
+                        {% endif %}
+                    </div>
+                    <div class="flip-card-back">
+                        {% if block.settings.card_title != blank %}
+                            <h2 class="">{{ block.settings.card_title }}</h2>
+                        {% endif %}
+                        {% if block.settings.text_content != blank  %}
+                            {{ block.settings.text_content}}
+                        {% endif %}
+                        <a href="www.google.com" class="card-link-btn" >Read More</a>
+                    </div>
+                  </div>
+                </div>
+        {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Service section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "section_margin_top",
+      "default": 0,
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "label": "Margin Top",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "section_margin_bottom",
+      "default": 0,
+      "max": 100,
+      "min": 0,
+      "step": 10,
+      "label": "Margin Bottom",
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Service blocks",
+      "limit": 6,
+      "type": "cards",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_content",
+          "label": "Service Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -29,7 +29,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -59,7 +63,10 @@
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "full_width": true,
@@ -81,7 +88,7 @@
             "featured_video": "shopify:\/\/files\/videos\/video-3.mp4"
           }
         },
-        "video-2":{
+        "video-2": {
           "type": "video",
           "settings": {
             "featured_video": "shopify:\/\/files\/videos\/video-3.mp4"
@@ -90,17 +97,22 @@
         "video-3": {
           "type": "video",
           "settings": {
-            "featured_video":"shopify:\/\/files\/videos\/video-3.mp4"
+            "featured_video": "shopify:\/\/files\/videos\/video-3.mp4"
           }
         },
-        "about-image":{
+        "about-image": {
           "type": "image",
           "settings": {
             "featured_img": "shopify:\/\/shop_images\/about_image.webp"
           }
         }
       },
-      "block_order": ["video-1", "video-2", "video-3", "about-image"]
+      "block_order": [
+        "video-1",
+        "video-2",
+        "video-3",
+        "about-image"
+      ]
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -121,6 +133,111 @@
         "padding_top": 28,
         "padding_bottom": 36
       }
+    },
+    "custom-slider-section": {
+      "type": "slider",
+      "blocks": {
+        "slide-one": {
+          "type": "slide",
+          "settings": {
+            "text_content": "<h3>From casual classics to modern formal styles, we have the perfect shirt to match your personality and occasion. Explore our latest collection today!<\/h3>",
+          }
+        },
+        "slide-two": {
+          "type": "slide",
+          "settings": {
+            "text_content": "<h3>Upgrade your wardrobe with the trendiest shirts at unbeatable prices. Don’t miss out on this exclusive offer—shop before it’s gone!<\/h3>",
+          }
+        },
+        "slide-three": {
+          "type": "slide",
+          "settings": {
+            "text_content": "<h3>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h3>",
+          }
+        },
+        "slide-four": {
+          "type": "slide",
+          "settings": {
+            "text_content": "<h3>Stay ahead in style with our fresh arrivals! Discover the latest trends and upgrade your wardrobe with the season's must-have shirts.<\/h3>",
+          }
+        }
+      },
+      "block_order": [
+        "slide-one",
+        "slide-two",
+        "slide-three",
+        "slide-four"
+      ],
+      "settings": {
+        "section_margin_top": 0,
+        "section_margin_bottom": 100
+      }
+    },
+    "service-section" :{
+      "type": "service",
+      "settings": {
+        "section_margin_top": 0,
+        "section_margin_bottom": 100
+      },
+      "blocks": {
+        "card-1": {
+          "type": "cards",
+          "settings": {
+            "text_content":"<h4>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h4>",
+            "card_image": "shopify:\/\/shop_images\/service.jpg",
+            "card_title": "Service 1"
+          }
+        },
+        "card-2": {
+          "type": "cards",
+          "settings": {
+            "text_content":"<h4>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h4>",
+            "card_image": "shopify:\/\/shop_images\/service-2.jpg",
+            "card_title": "Service 2"
+          }
+        },
+        "card-3": {
+          "type": "cards",
+          "settings": {
+            "text_content":"<h4>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h4>",
+            "card_image": "shopify:\/\/shop_images\/service-3.jpg",
+            "card_title": "Service 3"
+          }
+        },
+        "card-4": {
+          "type": "cards",
+          "settings": {
+            "text_content":"<h4>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h4>",
+            "card_image": "shopify:\/\/shop_images\/service.jpg",
+            "card_title": "Service 4"
+          }
+        },
+        "card-5": {
+          "type": "cards",
+          "settings": {
+            "text_content":"<h4>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h4>",
+            "card_image": "shopify:\/\/shop_images\/service-3.jpg",
+            "card_title": "Service 5"
+          }
+        },
+        "card-6": {
+          "type": "cards",
+          "settings": {
+            "text_content":"<h4>Our shirts are crafted with premium fabrics that offer exceptional comfort and timeless style. Perfect for every day, everywhere.<\/h4>",
+            "card_image": "shopify:\/\/shop_images\/service-2.jpg",
+            "card_title": "Service 6"
+          }
+        }
+      },
+      "block_order": [
+        "card-1",
+        "card-2",
+        "card-3",
+        "card-4",
+        "card-5",
+        "card-6",
+
+      ]
     },
     "collage": {
       "type": "collage",
@@ -145,7 +262,11 @@
           }
         }
       },
-      "block_order": ["collection-0", "product", "collection-1"],
+      "block_order": [
+        "collection-0",
+        "product",
+        "collection-1"
+      ],
       "settings": {
         "heading": "Multimedia collage",
         "heading_size": "h2",
@@ -200,7 +321,11 @@
           }
         }
       },
-      "block_order": ["column1", "column2", "column3"],
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -219,5 +344,15 @@
       }
     }
   },
-  "order": ["image_banner", "rich_text","custom-section", "featured_collection", "collage", "video", "multicolumn"]
+  "order": [
+    "image_banner",
+    "rich_text",
+    "custom-section",
+    "featured_collection",
+    "custom-slider-section",
+    "service-section",
+    "collage",
+    "video",
+    "multicolumn"
+  ]
 }
